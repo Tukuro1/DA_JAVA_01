@@ -11,15 +11,7 @@ import org.springframework.util.StringUtils;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import jakarta.validation.Valid;
-import org.springframework.web.multipart.MultipartFile;
 
-import java.io.File;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.nio.file.StandardCopyOption;
-import java.util.UUID;
 
 @Controller
 @RequestMapping("/admin/products")
@@ -28,6 +20,7 @@ public class AdminProductController {
     private ProductService productService;
     @Autowired
     private CategoryService categoryService;
+    public static String UPLOAD_DIRECTORY = System.getProperty("user.dir") + "/uploads";
     @GetMapping
     public String index(Model model)
     {
@@ -44,7 +37,7 @@ public class AdminProductController {
     @PostMapping("/add")
     public String addProduct(@Valid Product product, BindingResult result) {
         if (result.hasErrors()) {
-            return "/products/add-product";
+             return "redirect:/admin/products/add";
         }
         productService.addProduct(product);
         return "redirect:/admin/products";

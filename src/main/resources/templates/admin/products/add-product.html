@@ -18,6 +18,12 @@
                  th:errors="*{name}"></div>
         </div>
         <div class="mb-3">
+            <label for="image" class="form-label">Link ảnh:</label>
+            <input type="text" th:field="*{image}" class="form-control" id="image" required>
+            <div class="text-danger" th:if="${#fields.hasErrors('image')}"
+                 th:errors="*{image}"></div>
+        </div>
+        <div class="mb-3">
             <label for="price" class="form-label">Price:</label>
             <input type="text" th:field="*{price}" class="form-control" id="price"
                    required>

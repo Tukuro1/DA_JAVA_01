@@ -17,6 +17,7 @@ layout:decorate="~{layout}">
     <tr>
       <th>ID</th>
       <th>Name</th>
+      <th>Image</th>
       <th>Price</th>
       <th>Description</th>
       <th>Category Name</th>
@@ -28,6 +29,9 @@ layout:decorate="~{layout}">
     <tr th:each="product : ${products}">
       <td th:text="${product.id}"></td>
       <td th:text="${product.name}"></td>
+      <td>
+        <img style="max-width: 100px" th:src="${product.image}" alt="image">
+      </td>
       <td th:text="${product.price}"></td>
       <td th:text="${product.description}"></td>
       <td th:text="${product.category.name}"></td>
