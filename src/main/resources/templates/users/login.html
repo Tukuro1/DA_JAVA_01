@@ -1,45 +1,102 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org"
-      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      layout:decorate="~{layout-home}">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Login</title>
-    <link rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <title>Classy Login form Widget Flat Responsive Widget Template :: w3layouts</title>
+    <script src="js/jquery.min.js"></script>
+    <!-- Custom Theme files -->
+    <link href="css/style1.css" rel="stylesheet" type="text/css" media="all"/>
+    <!-- for-mobile-apps -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Classy Login form Responsive, Login form web template, Sign up Web Templates, Flat Web Templates, Login signup Responsive web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+    <!-- //for-mobile-apps -->
+    <!--Google Fonts-->
+    <link href='//fonts.googleapis.com/css?family=Roboto+Condensed:400,700' rel='stylesheet' type='text/css'>
 </head>
 <body>
-<section layout:fragment="content" class="container mt-5">
-    <h1 class="mb-4">Login</h1>
-    <form th:action="@{/login}" method="post">
-        <div th:if="${param.error}" class="alert alert-danger">
-            Invalid username and password.
-        </div>
-        <div th:if="${param.logout}" class="alert alert-success">
-            You have been logged out.
-        </div>
-        <div class="form-group mb-4">
-            <label for="username"></label>
-            <input type="text" class="form-control" required id="username"
-                   name="username" placeholder="Username">
-        </div>
-        <div class="form-group mb-4">
-            <label for="password"></label>
-            <input type="password" class="form-control" required id="password"
-                   name="password" placeholder="Password">
-        </div>
-        <div class="form-check d-flex justify-content-start mb-4">
-            <input type="checkbox" class="form-check-input" name="remember-me"
-                   id="remember-me">
-            <label class="form-check-label" for="remember-me"> Remember me</label>
-        </div>
-        <div class="d-grid gap-2 form-action">
-            <button type="submit" class="btn btn-primary btn-lg btnblock">Login</button>
-            <p class="mt-3 mb-0">Don't have an account? <a class="text-info textcenter" th:href="${'/register'}">Sign up?</a> </p>
-        </div>
-    </form>
-        <a href="/oauth2/authorization/google">Đăng nhập với google</a>
+<!--header start here-->
+<div class="header">
+    <div class="header-main">
+        <h1>Classy Login Form</h1>
+        <div class="header-bottom">
+            <div class="header-right w3agile">
 
-    </section>
+                <div class="header-left-bottom">
+
+                    <form th:action="@{/login}" method="post">
+                        <div th:if="${param.error}" class="alert alert-danger">
+                            Invalid username and password.
+                        </div>
+                        <div>
+                            <label for="username"></label>
+                            <input type="text"  id="username" name="username" />
+                        </div>
+                        <div>
+                            <label for="password"></label>
+                            <input type="password"  id="password" name="password"/>
+                        </div>
+                        <div class="remember">
+			             <span class="checkbox1">
+							   <label class="checkbox"><input type="checkbox" name="" checked=""><i> </i>Remember me</label>
+						 </span>
+                            <div class="forgot">
+                                <h6><a href="#">Forgot Password?</a></h6>
+                            </div>
+                            <div class="clear"> </div>
+                        </div>
+
+                        <input type="submit" value="Login">
+                    </form>
+                    <div class="header-left-top">
+                        <div class="sign-up"> <h2>or</h2> </div>
+
+                    </div>
+                    <div class="header-social wthree">
+                        <a href="/oauth2/authorization/google" class="email"><h5>Gmail</h5></a>
+                        <a href="#" class="face"><h5>Facebook</h5></a>
+                        <a href="#" class="twitt"><h5>Twitter</h5></a>
+                    </div>
+                    <p class="mt-3 mb-0">Don't have an account? <a class="text-info textcenter" th:href="${'/register'}">Sign up?</a> </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!--header end here-->
+<!--<section layout:fragment="content" class="container mt-5">-->
+<!--    <h1 class="mb-4">Login</h1>-->
+<!--    <form th:action="@{/login}" method="post">-->
+<!--        <div th:if="${param.error}" class="alert alert-danger">-->
+<!--            Invalid username and password.-->
+<!--        </div>-->
+<!--        <div th:if="${param.logout}" class="alert alert-success">-->
+<!--            You have been logged out.-->
+<!--        </div>-->
+<!--        <div class="form-group mb-4">-->
+<!--            <label for="username"></label>-->
+<!--            <input type="text" class="form-control" required id="username"-->
+<!--                   name="username" placeholder="Username">-->
+<!--        </div>-->
+<!--        <div class="form-group mb-4">-->
+<!--            <label for="password"></label>-->
+<!--            <input type="password" class="form-control" required id="password"-->
+<!--                   name="password" placeholder="Password">-->
+<!--        </div>-->
+<!--        <div class="form-check d-flex justify-content-start mb-4">-->
+<!--            <input type="checkbox" class="form-check-input" name="remember-me"-->
+<!--                   id="remember-me">-->
+<!--            <label class="form-check-label" for="remember-me"> Remember me</label>-->
+<!--        </div>-->
+<!--        <div class="d-grid gap-2 form-action">-->
+<!--            <button type="submit" class="btn btn-primary btn-lg btnblock">Login</button>-->
+<!--            <p class="mt-3 mb-0">Don't have an account? <a class="text-info textcenter" th:href="${'/register'}">Sign up?</a> </p>-->
+<!--        </div>-->
+<!--    </form>-->
+<!--        <a href="/oauth2/authorization/google">Đăng nhập với google</a>-->
+
+<!--    </section>-->
     <script
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">
     </script>
