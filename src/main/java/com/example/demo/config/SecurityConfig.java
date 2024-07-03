@@ -40,7 +40,7 @@ public class SecurityConfig {
         return http
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/css/**", "/js/**", "/", "/oauth/**", "/register", "/error",
-                                "/products", "/categories", "/blogs", "/cart")
+                                "/products", "/categories", "/blogs", "/cart/**")
                         .permitAll() // Cho phép truy cập không cần xác thực.
                         .requestMatchers( "/admin/products","/admin/products/edit/**", "/admin/products/add",
                                 "/admin/products/delete","/admin/categories", "/admin/categories/edit/**",
