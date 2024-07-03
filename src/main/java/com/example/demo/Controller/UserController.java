@@ -1,7 +1,7 @@
 package com.example.demo.Controller;
 
 import com.example.demo.Model.User;
-import com.example.demo.Service.UserService;
+import com.example.demo.repository.Service.UserService;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
 import lombok.RequiredArgsConstructor;

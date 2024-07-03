@@ -1,7 +1,7 @@
 package com.example.demo.Controller;
 
 import com.example.demo.Model.Category;
-import com.example.demo.Service.CategoryService;
+import com.example.demo.repository.Service.CategoryService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;

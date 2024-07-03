@@ -1,25 +1,14 @@
 package com.example.demo.Controller;
 
 import com.example.demo.Model.Product;
-import com.example.demo.Service.CategoryService;
-import com.example.demo.Service.ProductService;
+import com.example.demo.repository.Service.CategoryService;
+import com.example.demo.repository.Service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.util.StringUtils;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import jakarta.validation.Valid;
-import org.springframework.web.multipart.MultipartFile;
-
-import java.io.File;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.nio.file.StandardCopyOption;
-import java.util.UUID;
 
 @Controller
 @RequestMapping("/admin/products")

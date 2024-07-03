@@ -1,4 +1,4 @@
-package com.example.demo.Service;
+package com.example.demo.repository.Service;
 import com.example.demo.Model.Category;
 import com.example.demo.repository.CategoryRepository;
 import lombok.RequiredArgsConstructor;

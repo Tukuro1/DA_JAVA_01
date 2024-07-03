@@ -1,4 +1,4 @@
-package com.example.demo.Service;
+package com.example.demo.repository.Service;
 
 import jakarta.mail.MessagingException;
 import jakarta.mail.internet.MimeMessage;

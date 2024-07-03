@@ -1,6 +1,6 @@
 package com.example.demo.config;
 
-import com.example.demo.Service.UserService;
+import com.example.demo.repository.Service.UserService;
 import jakarta.validation.constraints.NotNull;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
