@@ -3,10 +3,10 @@ package com.example.demo.Controller;
 
 import com.example.demo.Model.CartItem;
 import com.example.demo.Model.PaymentMethod;
-import com.example.demo.repository.Service.CartService;
-import com.example.demo.repository.Service.EmailService;
-import com.example.demo.repository.Service.OrderService;
-import com.example.demo.repository.Service.UserService;
+import com.example.demo.Service.CartService;
+import com.example.demo.Service.EmailService;
+import com.example.demo.Service.OrderService;
+import com.example.demo.Service.UserService;
 import org.springframework.ui.Model;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
