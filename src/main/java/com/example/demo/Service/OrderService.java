@@ -3,7 +3,6 @@ package com.example.demo.Service;
 import com.example.demo.Model.CartItem;
 import com.example.demo.Model.Order;
 import com.example.demo.Model.OrderDetail;
-import com.example.demo.Model.PaymentMethod;
 import com.example.demo.repository.OrderDetailRepository;
 import com.example.demo.repository.OrderRepository;
 import jakarta.transaction.Transactional;
