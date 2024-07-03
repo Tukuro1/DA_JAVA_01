@@ -40,13 +40,13 @@ public class SecurityConfig {
         return http
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/css/**", "/js/**", "/", "/oauth/**", "/register", "/error",
-                                "/products", "/categories", "/blogs", "/cart", "/cart/**")
+                                "/products", "/categories", "/blogs", "/cart")
                         .permitAll() // Cho phép truy cập không cần xác thực.
                         .requestMatchers( "/admin/products","/admin/products/edit/**", "/admin/products/add",
                                 "/admin/products/delete","/admin/categories", "/admin/categories/edit/**",
                                 "/admin/categories/add", "/admin/categories/delete", "/admin/products",
                                 "/admin/categories", "/admin/blogs", "/admin/blogs/add",
-                                "/admin/blogs/edit/**", "/admin/blogs/delete")
+                                "/admin/blogs/edit/**", "/admin/blogs/delete", "/admin")
                         .hasAnyAuthority("ADMIN") // Chỉ cho phép ADMIN truy cập.
                         .requestMatchers("/api/**")
                         .permitAll() // API mở cho mọi người dùng.
