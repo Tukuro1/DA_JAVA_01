@@ -20,4 +20,6 @@ public class Blog {
     private Long id;
     private String title;
     private String content;
+    @Column(nullable = true)
+    private String imageBlog;
 }

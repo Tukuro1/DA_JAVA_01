@@ -10,6 +10,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import jakarta.validation.Valid;
 
+
 @Controller
 @RequestMapping("/admin/products")
 public class AdminProductController {
@@ -17,6 +18,7 @@ public class AdminProductController {
     private ProductService productService;
     @Autowired
     private CategoryService categoryService;
+    public static String UPLOAD_DIRECTORY = System.getProperty("user.dir") + "/uploads";
     @GetMapping
     public String index(Model model)
     {
@@ -33,7 +35,7 @@ public class AdminProductController {
     @PostMapping("/add")
     public String addProduct(@Valid Product product, BindingResult result) {
         if (result.hasErrors()) {
-            return "/products/add-product";
+             return "redirect:/admin/products/add";
         }
         productService.addProduct(product);
         return "redirect:/admin/products";
