@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      layout:decorate="~{layout-admin}">
+      layout:decorate="~{layout-admin1}">
 <head>
     <title th:text="${title} ?: 'Blogs List'">Blog</title>
     <link rel="stylesheet"
@@ -14,16 +14,17 @@
     <thead class="table-dark">
         <tr>
             <th>Title</th>
+            <th>Image</th>
             <th>Content</th>
             <th>Actions</th>
         </tr>
     </thead>
     <tr th:each="blog : ${blogs}">
-        <td th:text="${blog.id}"></td>
-        <td>
-            <img th:src="${blog.imageBlog}">
-        </td>
         <td th:text="${blog.title}"></td>
+        <td>
+            <img height="50" width="50" th:src="${blog.imageBlog}">
+        </td>
+
         <td th:text="${blog.content}"></td>
         <td>
             <a th:href="@{/admin/blogs/edit/{id}(id=${blog.id})}" class="btn
