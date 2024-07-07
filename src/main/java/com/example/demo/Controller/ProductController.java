@@ -20,4 +20,10 @@ public class ProductController {
         model.addAttribute("products", productService.getAllProducts());
         return "/products/product-list";
     }
+    // Display details of a single product
+    @GetMapping("/{id}")
+    public String showProductDetails(@PathVariable Long id, Model model) {
+        model.addAttribute("product", productService.getProductById(id).orElseThrow(() -> new IllegalStateException("Product not found")));
+        return "products/single-product";
+    }
 }

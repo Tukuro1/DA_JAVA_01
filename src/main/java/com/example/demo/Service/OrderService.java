@@ -23,6 +23,8 @@ public class OrderService {
     @Autowired
     private CartService cartService;
 
+    List<CartItem> cartItems;
+
     public List<Order> getOrders (){
         return orderRepository.findAll();
     }
@@ -34,9 +36,9 @@ public class OrderService {
         order.setAddress(address);
         order.setPhone(phone);
         order.setNote(note);
+        order.setId(order.getId());
         order.setPaymentMethod(paymentMethod);
         order = orderRepository.save(order);
-
         for (CartItem item : cartItems) {
             OrderDetail detail = new OrderDetail();
             detail.setOrder(order);
@@ -44,10 +46,8 @@ public class OrderService {
             detail.setQuantity(item.getQuantity());
             orderDetailRepository.save(detail);
         }
-
         // Optionally clear the cart after order placement
         cartService.clearCart();
-
         return order;
     }
 }

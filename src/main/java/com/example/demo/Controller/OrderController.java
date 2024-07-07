@@ -61,16 +61,23 @@ public class OrderController {
             nameListProduct += c.getNameProduct() + ", ";
         }
         if (cartItems.isEmpty()) {
-            return "redirect:/cart"; // Redirect if cart is empty
-        }
-        try {
-            orderService.createOrder(customerName, address, phone, note, cartItems, paymentMethod);
-            emailService.sendEmail(titleMail, nameListProduct, email);
-        } catch (Exception e) {
+            // Redirect if cart is empty
             return "redirect:/cart";
         }
+        try {
+            // Attempt to create an order
+            orderService.createOrder(customerName, address, phone, note, cartItems, paymentMethod);
+            // Send an email confirmation
+            emailService.sendEmail(titleMail, nameListProduct, email);
+        } catch (Exception e) {
+            // Log the exception (optional, for debugging purposes)
+            // e.g., logger.error("Error creating order or sending email", e);
 
-        return "redirect:/order/confirmation";
+            // Redirect to cart page if there is an error
+            return "redirect:/cart";
+        }
+        // Redirect to a success page or confirmation page if needed
+        return "redirect:/order-confirmation";
     }
 
     @GetMapping("/confirmation")
