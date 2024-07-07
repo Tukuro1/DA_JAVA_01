@@ -1,6 +1,7 @@
 package com.example.demo.Service;
 
 import com.example.demo.Model.CartItem;
+import com.example.demo.Model.Cart;
 import com.example.demo.Model.Product;
 import com.example.demo.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,21 +14,28 @@ import java.util.List;
 @Service
 @SessionScope
 public class CartService {
-    private List<CartItem> cartItems = new ArrayList<>();
     @Autowired
     private ProductRepository productRepository;
-    public void addToCart(Long productId, int quantity) {
-        Product product = productRepository.findById(productId)
-                .orElseThrow(() -> new IllegalArgumentException("Product not found: " + productId));
-                        cartItems.add(new CartItem(product, quantity));
-    }
+
+    private Cart cart = new Cart();
+
     public List<CartItem> getCartItems() {
-        return cartItems;
+        return cart.getItems();
     }
+
+    public void addToCart(Long productId, int quantity) {
+        Product product = productRepository.findById(productId).orElseThrow(() -> new RuntimeException("Product not found"));
+        cart.addItem(product, quantity);
+    }
+
     public void removeFromCart(Long productId) {
-        cartItems.removeIf(item -> item.getProduct().getId().equals(productId));
+        cart.removeItem(productId);
     }
+
     public void clearCart() {
-        cartItems.clear();
+        cart.clear();
+    }
+    public double getCartSubtotal() {
+        return cart.getSubtotal();
     }
 }

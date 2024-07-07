@@ -40,6 +40,7 @@ public class OrderController {
     public String checkout(Model model) {
         model.addAttribute("paymentMethods", PaymentMethod.values());
         model.addAttribute("cartItems", cartService.getCartItems());
+        model.addAttribute("subtotal", cartService.getCartSubtotal());
         return "/cart/checkout";
     }
 

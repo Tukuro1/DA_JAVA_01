@@ -48,6 +48,8 @@ public class SecurityConfig {
                                 "/admin/categories", "/admin/blogs", "/admin/blogs/add",
                                 "/admin/blogs/edit/**", "/admin/blogs/delete", "/admin")
                         .hasAnyAuthority("ADMIN") // Chỉ cho phép ADMIN truy cập.
+                        .requestMatchers("/order/**")
+                        .authenticated()
                         .requestMatchers("/api/**")
                         .permitAll() // API mở cho mọi người dùng.
                         .anyRequest().authenticated() // Bất kỳ yêu cầu nào khác cần xác thực.
